@@ -72,7 +72,7 @@ public class pipNadoScript : MonoBehaviour {
 
 		offset = (offset * Bomb.GetModuleNames().Count()) % 100;
 
-		Debug.LogFormat("[Pippy-NATO #{0}] The offset is {1}.", moduleId, offset);
+		Debug.LogFormat("[Pip-Nado #{0}] The offset is {1}.", moduleId, offset);
     }
 
 	void textSelection()
@@ -120,7 +120,7 @@ public class pipNadoScript : MonoBehaviour {
 	void calcMain()
     {
 		calculatedNumber = ((pippyNatoAlphabetValues[natoSequenceIndex[0]] + pippyNatoAlphabetValues[natoSequenceIndex[1]] + pippyNatoAlphabetValues[natoSequenceIndex[2]] + pippyNatoAlphabetValues[natoSequenceIndex[3]]) * offset) % 1000;
-		Debug.LogFormat("[Pippy-NATO #{0}] The final value is {1}.", moduleId, calculatedNumber);
+		Debug.LogFormat("[Pip-Nado #{0}] The final value is {1}.", moduleId, calculatedNumber);
     }
 
 	void topHatPress()
@@ -178,7 +178,7 @@ public class pipNadoScript : MonoBehaviour {
 
 	IEnumerator solveStuff()
     {
-		Debug.LogFormat("[Pippy-NATO #{0}] That is correct! Module solved!", moduleId);
+		Debug.LogFormat("[Pip-Nado #{0}] That is correct! Module solved!", moduleId);
 		moduleSolved = true;
 		Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, transform);
 		GetComponent<KMBombModule>().HandlePass();
@@ -196,7 +196,7 @@ public class pipNadoScript : MonoBehaviour {
 
 	IEnumerator countDownTimer()
     {
-		Debug.LogFormat("[Pippy-NATO #{0}] Timer has started.", moduleId);
+		Debug.LogFormat("[Pip-Nado #{0}] Timer has started.", moduleId);
 		int seconds = 90;
 		while (countdownTimer && seconds != 0)
         {
@@ -215,7 +215,7 @@ public class pipNadoScript : MonoBehaviour {
 
 	IEnumerator displaySequence()
     {
-		Debug.LogFormat("[Pippy-NATO #{0}] The displayed words in the sequence are: {1}, {2}, {3}, and {4}.", moduleId, natoSequence[0], natoSequence[1], natoSequence[2], natoSequence[3]);
+		Debug.LogFormat("[Pip-Nado #{0}] The displayed words in the sequence are: {1}, {2}, {3}, and {4}.", moduleId, natoSequence[0], natoSequence[1], natoSequence[2], natoSequence[3]);
 		while (countdownTimer)
         {
 			mainDisplay.text = natoSequence[0].ToString();
@@ -244,7 +244,7 @@ public class pipNadoScript : MonoBehaviour {
 		mainDisplay.text = "";
 		timerDisplay.text = "";
 		GetComponent<KMBombModule>().HandleStrike();
-		Debug.LogFormat("[Pippy-NATO #{0}] Strike! {1} Resetting...", moduleId, reason);
+		Debug.LogFormat("[Pip-Nado #{0}] Strike! {1} Resetting...", moduleId, reason);
 		textSelection();
 		for (int i = 0; i < 3; i++)
         {
