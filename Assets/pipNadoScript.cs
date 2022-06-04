@@ -352,7 +352,7 @@ public class pipNadoScript : MonoBehaviour {
 				}
                 else
                 {
-					yield return "sendtochat error '" + commands[1] + "' is an invalid value!";
+					yield return "sendtochaterror '" + commands[1] + "' is an invalid value!";
                 }
 			}
 			else if (commands.Length == 3)
